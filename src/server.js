@@ -19,7 +19,7 @@ http.createServer((req, res) => {
         const char = data.filter((char) => char.id === Number(id));
 
         if (char.length) {
-            return res.end(JSON.stringify(char));
+            return res.end(JSON.stringify(char[0]));
         } else {
             const charNotFound = { error: "Character not found" };
 
