@@ -17,7 +17,14 @@ http.createServer((req, res) => {
         const id = urlDivided[urlDivided.length - 1];
 
         const char = data.filter((char) => char.id === Number(id));
-        return res.end(JSON.stringify(char));
+
+        if (char.length) {
+            return res.end(JSON.stringify(char));
+        } else {
+            const charNotFound = { error: "Character not found" };
+
+            return res.end(JSON.stringify(charNotFound));
+        }
     }
 }).listen(PORT, HOST, () => {
     console.log(`Server is running on http://${HOST}:${PORT}`);
