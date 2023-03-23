@@ -11,14 +11,13 @@ http.createServer((req, res) => {
     console.log("A request is coming", url);
 
     if (url.includes("rickandmorty/character")) {
-        res.writeHead(200, { "Content-Type": "application/json" });
-
         const urlDivided = url.split("/");
         const id = urlDivided[urlDivided.length - 1];
 
         const char = data.filter((char) => char.id === Number(id));
 
         if (char.length) {
+            res.writeHead(200, { "Content-Type": "application/json" });
             return res.end(JSON.stringify(char[0]));
         } else {
             const charNotFound = { error: "Character not found" };
