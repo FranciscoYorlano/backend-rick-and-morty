@@ -7,6 +7,7 @@ const getCharDetail = (res, id) => {
         .get(`${URL}/${id}`)
         .then((response) => {
             res.writeHead(200, { "Content-Type": "application/json" });
+            console.log(JSON.stringify(response.data));
             return res.end(JSON.stringify(response.data));
         })
         .catch((error) => {
