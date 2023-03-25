@@ -1,5 +1,5 @@
 const axios = require("axios");
-const URL = "https://rickandmortyapi.com/api/character";
+const { URL } = process.env;
 
 const getCharDetail = (res, id) => {
     axios

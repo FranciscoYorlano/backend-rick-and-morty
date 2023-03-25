@@ -1,7 +1,9 @@
 // server-rick-and-morty\src\server.js
+require("dotenv").config();
+
 const http = require("http");
 const getCharById = require("./controllers/getCharById");
-const getCharDetail = require("./controllers/getChatDeatil");
+const getCharDetail = require("./controllers/getChatDetail");
 
 const PORT = 3001;
 const HOST = "localhost";

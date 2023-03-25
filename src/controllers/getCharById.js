@@ -1,6 +1,6 @@
 // server-rick-and-morty\src\controllers\getCharById.js
 const axios = require("axios");
-const URL = "https://rickandmortyapi.com/api/character";
+const { URL } = process.env;
 
 const getCharById = (res, id) => {
     axios
