@@ -3,7 +3,6 @@ const axios = require("axios");
 const URL = "https://rickandmortyapi.com/api/character";
 
 const getCharById = (res, id) => {
-    console.log("Buscando pensonaje ID:" + id);
     axios
         .get(`${URL}/${id}`)
         .then((response) => {
@@ -14,12 +13,10 @@ const getCharById = (res, id) => {
                 gender: response.data.gender,
                 species: response.data.species,
             };
-            console.log(obj);
             res.writeHead(200, { "Content-Type": "application/json" });
             return res.end(JSON.stringify(obj));
         })
         .catch((error) => {
-            console.log(error.message);
             res.writeHead(500, { "Content-Type": "text/plain" });
             return res.end(error.message);
         });
