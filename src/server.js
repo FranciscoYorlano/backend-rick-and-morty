@@ -1,6 +1,9 @@
 // server-rick-and-morty\src\server.js
 
 const express = require("express");
+
+const router = require("./routes/index");
+
 const server = express();
 const PORT = 3001;
 
