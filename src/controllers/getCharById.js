@@ -3,6 +3,10 @@ const axios = require("axios");
 const { URL } = process.env;
 
 const getCharById = (res, id) => {
+    const params = req.params;
+
+    console.log(params);
+
     axios
         .get(`${URL}/${id}`)
         .then((response) => {
