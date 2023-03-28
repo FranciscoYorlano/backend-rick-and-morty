@@ -1,16 +1,17 @@
 const axios = require("axios");
 const { URL } = process.env;
 
-const getCharDetail = (res, id) => {
+const getCharDetail = (req, res) => {
+    const { id } = req.params;
+
     axios
         .get(`${URL}/${id}`)
         .then((response) => {
-            res.writeHead(200, { "Content-Type": "application/json" });
-            return res.end(JSON.stringify(response.data));
+            const { id, name, species, image, gender, origin } = response.data;
+            res.status(200).json({ id, name, species, image, gender, origin });
         })
         .catch((error) => {
-            res.writeHead(500, { "Content-Type": "text/plain" });
-            return res.end(error.message);
+            res.status(500).json({ error: error.message });
         });
 };
 
