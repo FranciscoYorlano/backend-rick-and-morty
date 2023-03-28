@@ -5,12 +5,8 @@ const getChatDetail = require("../controllers/getChatDetail");
 
 const router = Router();
 
-router.get("/search/:id", (req, res) => {
-    getCharById(res, req.params.id);
-});
+router.get("/search/:id", getCharById);
 
-router.get("/detail/:id", (req, res) => {
-    getChatDetail(re, req.params.id);
-});
+router.get("/detail/:id", getChatDetail);
 
 module.exports = router;
