@@ -4,7 +4,6 @@ const { URL } = process.env;
 
 const getCharById = (req, res) => {
     const { id } = req.params;
-    console.log(`${URL}/${id}`);
 
     axios
         .get(`${URL}/${id}`)
