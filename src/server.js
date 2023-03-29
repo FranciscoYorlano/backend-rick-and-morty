@@ -2,11 +2,19 @@
 
 // Dependencies
 require("dotenv").config();
+
+// Express
 const express = require("express");
+
+// Middlewares
 const morgan = require("morgan");
 const cors = require("cors");
-const router = require("./routes/index");
-const PORT = process.env.PORT || 3001; // No es necesario aclarar el file porque indexea los file de nnombre index
+
+// Router
+const router = require("./routes");
+
+// Enviroment
+const PORT = process.env.PORT || 3001;
 
 const server = express();
 

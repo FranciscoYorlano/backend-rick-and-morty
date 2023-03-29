@@ -13,7 +13,7 @@ router.get("/detail/:id", getChatDetail);
 
 router.post("/rickandmorty/fav", (req, res) => {
     favs.push(req.body);
-    res.status(200).json({ status: "ok" });
+    res.status(200).json({ status: "Post Fav Ok" });
 });
 
 router.get("/rickandmorty/fav", (req, res) => {
@@ -22,7 +22,7 @@ router.get("/rickandmorty/fav", (req, res) => {
 
 router.delete("/rickandmorty/fav/:id", (req, res) => {
     favs = favs.filter((fav) => fav.id !== Number(req.params.id));
-    res.status(200).json({ status: "ok" });
+    res.status(200).json({ status: "Delete Fav Ok" });
 });
 
 module.exports = router;
